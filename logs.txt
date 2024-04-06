@@ -1,0 +1,42 @@
+$ git log
+commit 4a0149f8b1a2e62877820fda02382e9983ef451d (HEAD -> master, origin/master, origin/bug2, bug2)
+Author: stefanijalazareva <stefilazareva0601@gmail.com>
+Date:   Sat Apr 6 13:12:49 2024 +0200
+
+    Call method makeBigStringFrom in main class
+
+commit d1317a0d67d19a31b7c5e65d378fae8f15aa460f
+Author: stefanijalazareva <stefilazareva0601@gmail.com>
+Date:   Sat Apr 6 13:08:54 2024 +0200
+
+    Fix wrong condition in makeBigStringFrom
+
+commit 7e596c16750e7b0c8e5e57f23de97c00c88af1bc (origin/bug1, bug1)
+Author: stefanijalazareva <stefilazareva0601@gmail.com>
+Date:   Sat Apr 6 13:11:09 2024 +0200
+
+    Call method filterOddLengthStrings in main class
+
+commit 3fd5a221b2c011690deac7c7c74d3d6b963ddbc7
+Author: stefanijalazareva <stefilazareva0601@gmail.com>
+Date:   Sat Apr 6 13:00:48 2024 +0200
+
+    Fix wrong condition in filterOddLengthStrings
+
+commit 3f1aaf5bc8e8a374d6079f02f2e80f44f982b8c3
+Author: stefanijalazareva <stefilazareva0601@gmail.com>
+Date:   Sat Mar 30 14:42:49 2024 +0100
+
+    Add starter code
+
+commit 83a2e751bbecb0e121b555bf7d0b56b17547bcda
+Author: stefanijalazareva <stefilazareva0601@gmail.com>
+Date:   Sat Mar 30 14:34:22 2024 +0100
+
+    Initial commit
+
+commit c84c1c64829dd2ae27ec45e219efcc7a447f506d
+Author: stefanijalazareva <stefilazareva0601@gmail.com>
+Date:   Sat Mar 30 14:13:15 2024 +0100
+
+    Initial commit

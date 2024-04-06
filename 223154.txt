@@ -1,0 +1,181 @@
+1. Инсталирано
+2. Го променив името од main во master.
+3. Креирав
+4. $ mkdir SI_2024_lab1_223154
+   $ cd SI_2024_lab1_223154
+   $ git init
+   Initialized empty Git repository in C:\Users\Stefanija\SI_2024_lab1_223154/.git/
+5. $ git push -u origin master
+Enumerating objects: 2, done.
+Counting objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 171 bytes | 171.00 KiB, done.
+Total 2 (delta 0), reused 0 (delta0), pack-reused 0 (from 0)
+To https://github.com/stefanijalazareva/SI_2024_lab1_223154.git
+* [new branch]	master -> master
+branch 'master' set up to track 'origin/master'
+6. $ nano README.md
+   $ git add README.md
+   $ git commit -m "Initial commit"
+   [master (root-commit) 83a2e75] Initial commit
+   1 file changed, 3 insertion(+)
+   create mode 100644 README.md
+7. $ mv "Downloads/SILab1_1.java" "SI_2024_lab1_223154"
+   $ mv "Downloads/SILab1_2.java" "SI_2024_lab1_223154"
+   $ mv "Downloads/SILab1Main.java" "SI_2024_lab1_223154"
+   $ git add SILab1_1.java SILab1_2.java SILab1Main.java
+   $ git commit -m "Add starter code"
+   [master 3be788d] Add starter code
+   3 files changed, 47 insertions(+)
+   create mode 100644 SILab1Main.java
+   create mode 100644 SILab1_1.java
+   create mode 100644 SILab1_2.java
+8. $ git push origin master
+   Enumerating objects: 9, done.
+   Counting objects: 100% (9/9), done.
+   Delta compression using up to 16 threads
+   Compressing objects: 100% (7/7), done.
+   Writing objects: 100% (8/8), 1.22 KiB | 1.22 MiB/s, done.
+   Total 8 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+   To https://github.com/stefanijalazareva/SI_2024_lab1_223154.git
+	c84c1c6..3f1aaf5  master -> master
+9. $ git branch bug1
+   $ git branch bug2
+10. $ git checkout bug1
+    Switched to branch 'bug1'
+11. $ nano SILab1_1.java
+    $ git add .
+    $ git commit -m "Fix wrong condition in filterOddLengthStrings"
+    [bug1 3fd5a22] Fix wrong condition in filterOddLengthStrings
+12. $ git checkout bug2
+    Switched to branch 'bug2'
+13. $ nano SILab1_2.java
+    $ git add .
+    $ git commit -m "Fix wrong condition in makeBigStringFrom"
+    [bug2 d1f763d] Fix wrong condition in makeBigStringFrom
+    1 file changed, 2 insertions(+), 2 deletions(-)
+14. $ git checkout bug1
+    Switched to branch 'bug1'
+15. $ nano SILab1Main.java
+    $ git add .
+    $ git commit -m "Call method filterOddLengthStrings in main class"
+    [bug1 7e596c1] Call method filterOddLengthStrings in main class
+    1 file changed, 1 insertion(+)
+16. $ git checkout bug2
+    Switched to branch 'bug2'
+17. $ nano SILab1Main.java
+    $ git add .
+    $ git commit -m "Call method makeBigStringFrom in main class"
+    [bug2 1145cb3] Call method makeBigStringFrom in main class
+    1 file changed, 1 insertion(+)
+18. $ git push
+    fatal: The current branch bug2 has no upstream branch.
+    To push the current branch and set the remote as upstream, use
+
+         git push --set-upstream origin bug2
+
+    To have this happen automatically for branches without a tracking
+    upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+    $ git push --set-upstream origin bug2
+    Enumerating objects: 11, done.
+    Counting objects: 100% (11/11), done.
+    Delta compression using up to 16 threads
+    Compressing objects: 100% (7/7), done.
+    Writing objects: 100% (8/8), 1.79 KiB | 1.79 MiB/s, done.
+    Total 8 (delta 3), reused 0 (delta 0), pack-reused 0 (from 0)
+    remote: Resolving deltas: 100% (3/3), completed with 2 local objects.
+    remote:
+    remote: Create a pull request for 'bug2' on GitHub by visiting:
+    remote:      https://github.com/stefanijalazareva/SI_2024_lab1_223154/pull/new/bug2
+    remote:
+    To https://github.com/stefanijalazareva/SI_2024_lab1_223154.git
+     * [new branch]      bug2 -> bug2
+    branch 'bug2' set up to track 'origin/bug2'.
+19. $ git checkout master
+    Switched to branch 'master'
+20. $ git merge bug1
+    Updating 3f1aaf5..7e596c1
+    Fast-forward
+    SILab1Main.java | 1 +
+    SILab1_1.java   | 4 ++--
+    2 files changed, 3 insertions(+), 2 deletions(-)
+При извршување на наредбата немаше конфликти. 
+Употребена е стратегијата Fast-forward.
+21. $ git push origin master
+    Enumerating objects: 15, done.
+    Counting objects: 100% (15/15), done.
+    Delta compression using up to 16 threads
+    Compressing objects: 100% (12/12), done.
+    Writing objects: 100% (6/6), 752 bytes | 752.00 KiB/s, done.
+    Total 12 (delta 3), reused 0 (delta 0), pack-reused 0 (from 0)
+    remote: Resolving deltas: 100% (3/3), completed with 2 local objects.
+    To https://github.com/stefanijalazareva/SI_2024_lab1_223154.git
+       3f1aaf5..7e596c1  master -> master
+22. $ git checkout bug2
+    Switched to branch 'bug2'
+    Your branch is up to date with 'origin/bug2'.
+23. $ git rebase master
+    Auto-merging SILab1Main.java
+    CONFLICT (content): Merge conflict in SILab1Main.java
+    error: could not apply 1145cb3... Call method makeBigStringFrom in main class
+    hint: Resolve all conflicts manually, mark them as resolved with
+    hint: "git add/rm <conflicted_files>", then run "git rebase --continue".
+    hint: You can instead skip this commit: run "git rebase --skip".
+    hint: To abort and get back to the state before "git rebase", run "git rebase --abort".
+    Could not apply 1145cb3... Call method makeBigStringFrom in main class
+    $ nano SILab1Main.java
+Се случи конфликт, во SILab1Main.java. Конфликтот го разрешив така што го отворив java документот со nano, ги избришав непотребните линии и ги оставив двете System.out.println линии код.
+    $ git add SILab1Main.java
+    $ git rebase --continue
+    [detached HEAD 914336d] Call method makeBigStringFrom in main class Conflict is solved!!!
+     1 file changed, 1 insertion(+)
+    Successfully rebased and updated refs/heads/bug2.
+24. $ git checkout master
+    Switched to branch 'master'
+25. $ git merge bug2
+    Updating 7e596c1..4a0149f
+    Fast-forward
+     SILab1Main.java | 1 +
+     SILab1_2.java   | 4 ++--
+     2 files changed, 3 insertions(+), 2 deletions(-)
+Нема конфликт при спојувањето и тоа е Fast-forward
+26. $ git push origin master
+    Enumerating objects: 12, done.
+    Counting objects: 100% (12/12), done.
+    Delta compression using up to 16 threads
+    Compressing objects: 100% (8/8), done.
+    Writing objects: 100% (8/8), 1.83 KiB | 1.83 MiB/s, done.
+    Total 8 (delta 4), reused 0 (delta 0), pack-reused 0 (from 0)
+    remote: Resolving deltas: 100% (4/4), completed with 3 local objects.
+    To https://github.com/stefanijalazareva/SI_2024_lab1_223154.git
+      7e596c1..4a0149f  master -> master
+
+$ git push origin bug1
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote:
+remote: Create a pull request for 'bug1' on GitHub by visiting:
+remote:      https://github.com/stefanijalazareva/SI_2024_lab1_223154/pull/new/bug1
+remote:
+To https://github.com/stefanijalazareva/SI_2024_lab1_223154.git
+ * [new branch]      bug1 -> bug1
+
+$ git push origin bug2
+To https://github.com/stefanijalazareva/SI_2024_lab1_223154.git
+ ! [rejected]        bug2 -> bug2 (non-fast-forward)
+error: failed to push some refs to 'https://github.com/stefanijalazareva/SI_2024_lab1_223154.git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. If you want to integrate the remote changes, use 'git pull'
+hint: before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+27. $ git push --force origin bug2
+    Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+    To https://github.com/stefanijalazareva/SI_2024_lab1_223154.git
+     + 1145cb3...4a0149f bug2 -> bug2 (forced update)
+
+28. $ git log
+    $ nano logs.txt
+    $ nano 223154.txt
+    $ git add .
+    $ git commit -m "Final commit"
+    $ git push origin master
